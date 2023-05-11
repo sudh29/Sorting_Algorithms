@@ -27,3 +27,16 @@ def quickSort(a, start, end):
 x = [5, 22, -6, 7, 2, 1, 0, 3]
 (quickSort(x, 0, len(x) - 1))
 print(x)
+
+
+
+# Smaller code
+def quicksort(array):
+    if len(array) <= 1:
+        return array
+
+    pivot = array[len(array) // 2]
+    smaller = [x for x in array if x < pivot]
+    larger = [x for x in array if x >= pivot]
+
+    return quicksort(smaller) + [pivot] + quicksort(larger)
